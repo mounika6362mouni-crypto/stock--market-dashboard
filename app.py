@@ -4,8 +4,10 @@ import os
 
 load_dotenv()
 
+api_key = os.getenv("ALPHA_VANTAGE_API_KEY")
 
-api_key=os.getenv("ALPHA_VANTAGE_API_KEY")
+if not api_key:
+    api_key = st.secrets["ALPHA_VANTAGE_API_KEY"]
 
 st.title("📊 Real-Time Stock Market Dashboard")
 
